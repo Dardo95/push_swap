@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/23 13:48:50 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/28 14:25:34 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_node		*head;
-	int			size;
-}	t_stack;
+	size_t	i;
 
-typedef struct s_node
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+/*int	main(void)
 {
-	int					data;
-	struct s_node		*next;
-	int					s_index;
-}	t_node;
+	char	s1[] = "helo ";
+	char	s2[] = "helo";
+	int		result;
 
-#endif
+	result = ft_strncmp(s1, s2, 5);
+	printf("%i", result);
+}*/

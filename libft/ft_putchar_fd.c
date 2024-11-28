@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/23 12:31:56 by enogueir          #+#    #+#             */
+/*   Updated: 2024/11/01 15:22:18 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+int	ft_putchar_fd(char c, int fd)
 {
-	t_node		*head;
-	int			size;
-}	t_stack;
-
-typedef struct s_node
+	write(fd, &c, 1);
+	return (1);
+}
+/*
+int	main(void)
 {
-	int					data;
-	struct s_node		*next;
-	int					s_index;
-}	t_node;
+	int i;
+	char num;
 
-#endif
+	i = 0;
+	num = '0';
+	while(i < 10)
+	{
+		ft_putchar_fd(num, 1);
+		i++;
+		num++;
+	}
+}*/

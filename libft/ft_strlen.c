@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/17 19:11:05 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/21 18:17:02 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+size_t	ft_strlen(const char *s)
 {
-	t_node		*head;
-	int			size;
-}	t_stack;
+	size_t	count;
 
-typedef struct s_node
-{
-	int					data;
-	struct s_node		*next;
-	int					s_index;
-}	t_node;
-
-#endif
+	count = 0;
+	while (*s++)
+		count++;
+	return (count);
+}

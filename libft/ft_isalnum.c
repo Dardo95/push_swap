@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/21 17:55:55 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/23 12:36:26 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+int	ft_isalnum(int c)
 {
-	t_node		*head;
-	int			size;
-}	t_stack;
-
-typedef struct s_node
+	return (ft_isalpha(c) || ft_isdigit(c));
+}
+/*
+int	main(void)
 {
-	int					data;
-	struct s_node		*next;
-	int					s_index;
-}	t_node;
-
-#endif
+	if (ft_isalnum(32))
+		write(1, "is num", 6);
+}*/

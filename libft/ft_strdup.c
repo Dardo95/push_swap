@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/25 17:44:08 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/26 18:20:50 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+char	*ft_strdup(const char *s)
 {
-	t_node		*head;
-	int			size;
-}	t_stack;
+	char	*str;
+	size_t	len;
 
-typedef struct s_node
+	len = ft_strlen(s) + 1;
+	str = (char *)malloc(len * sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s, len);
+	return (str);
+}
+/*
+int	main(void)
 {
-	int					data;
-	struct s_node		*next;
-	int					s_index;
-}	t_node;
+	char *s = "hello";
+	char *str;
 
-#endif
+	str = ft_strdup(s);
+	printf("%s", str);
+	free(str);
+	return(0);
+}*/

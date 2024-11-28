@@ -1,31 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/28 16:30:43 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/28 16:30:51 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+/*static void	ft_toup(unsigned int i, char *c)
 {
-	t_node		*head;
-	int			size;
-}	t_stack;
+	(void)i;
+	if (c)
+	{
+		if (*c >= 'a' && *c <= 'z' && *c)
+		{
+			*c = *c - 32;
+		}
+	}
+}*/
 
-typedef struct s_node
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int					data;
-	struct s_node		*next;
-	int					s_index;
-}	t_node;
+	int	i;
 
-#endif
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
+
+/*int	main(void)
+{
+	char	str[] = "hello";
+
+	ft_striteri(str, ft_toup);
+	printf("%s\n", str);
+	return (0);
+}*/

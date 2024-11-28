@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/21 18:17:25 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/21 18:31:45 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+void	*ft_memset(void *s, int c, size_t n)
 {
-	t_node		*head;
-	int			size;
-}	t_stack;
+	size_t	i;
 
-typedef struct s_node
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = c;
+		i++;
+	}
+	return (s);
+}
+/*
+int	main(void)
 {
-	int					data;
-	struct s_node		*next;
-	int					s_index;
-}	t_node;
-
-#endif
+	char	str[] = "hello";
+	ft_memset(str, 'Z', 4);
+	write(1, str, 4);
+}*/

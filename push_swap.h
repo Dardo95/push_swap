@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/04 16:51:40 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:18:41 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_stack
 {

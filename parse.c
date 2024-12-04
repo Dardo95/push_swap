@@ -6,8 +6,13 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:46:38 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/04 16:47:33 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:41:03 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	split_arg(int argc, char **argv)
+{
+	
+}

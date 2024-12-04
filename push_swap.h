@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:10 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/04 16:51:40 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,13 @@ typedef struct s_node
 	struct s_node		*next;
 	int					s_index;
 }	t_node;
+
+void	push(t_stack *stack_a, t_stack *stack_b, char c, int s_n_bool);
+void	reverse_rotate(t_stack *stack, char c, int s_n_bool);
+void	reverse_rotate_both(t_stack *stack_a, t_stack *stack_b);
+void	rotate(t_stack *stack, char c, int s_n_bool);
+void	rotate_both(t_stack *stack_a, t_stack *stack_b);
+void	swap(t_stack *stack, char c, int s_n_bool);
+void	swap_both(t_stack *stack_a, t_stack *stack_b);
 
 #endif

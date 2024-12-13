@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:46:38 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/09 16:45:28 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:25:45 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ size_t  count_numbers(int argc, char  **argv)
             if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' '
                 && argv[i][j] != '+' && argv[i][j] != '-')
             {
-                
+				ft_error("Error\n", 1);
             }
+			if (argv[i][j] = '-' && argv)
+			j++;
         }
         i++;
     }

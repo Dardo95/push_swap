@@ -6,13 +6,17 @@
 /*   By: enogueir <enogueir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:45:58 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/09 16:52:34 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/11 14:41:34 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_error(char *error , int b)
+void    ft_error(char *err , int b)
 {
-
+	write(2, err, ft_strlen(err));
+	if (b == 1)
+	{
+		exit(EXIT_FAILURE);
+	}
 }

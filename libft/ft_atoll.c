@@ -6,22 +6,21 @@
 /*   By: ryner <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:40:24 by ryner             #+#    #+#             */
-/*   Updated: 2024/12/13 11:40:32 by ryner            ###   ########.fr       */
+/*   Updated: 2024/12/18 16:04:36 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h";
+#include "libft.h"
 
-long long atoll(const char *nptr)
+long long	atoll(const char *nptr)
 {
-	long long sign;
-	long long result;
-	size_t i;
+	long long	sign;
+	long long	result;
+	size_t		i;
 
 	i = 0;
 	sign = 1;
 	result = 0;
-
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-' )

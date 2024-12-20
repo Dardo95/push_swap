@@ -6,13 +6,58 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:26:49 by enogueir          #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:45 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:44:17 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "push_swap.h"
+
+void init_ps(t_stack *stack_a, t_stack *stack_b, int *array, size_t size)
+{
+	size_t	i;
+
+	stack_a->head = NULL;
+	stack_a->size = 0;
+	i = size - 1;
+	while(i >= 0)
+	{
+		push_stack(stack_a, 0, array[i]);
+		i--;
+	}
+	stack_b->head = NULL;
+	stack_b->size = 0;
+	ft_
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int main(int argc, char **argv)
 {

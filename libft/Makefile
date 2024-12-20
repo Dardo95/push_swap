@@ -50,6 +50,7 @@ SRC=        ft_bzero.c \
 			ft_lstmap_bonus.c \
             ft_error.c \
             ft_atoll.c \
+			ft_bubble_sort.c \
 
 OBJ= $(SRC:.c=.o) 
 

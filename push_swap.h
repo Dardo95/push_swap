@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/04 17:18:41 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:08:17 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int		check_limits(const char *num_str);
 void	check_duplicates(int *numbers, size_t len);
 void	farray(int argc, char **argv, int *array);
 int		*init_parse(int argc, char **argv, size_t *count);
-
+void	init_stacks(t_stack *stack_a, t_stack *stack_b, int *array, int size);
+void	push_stack(t_stack *stack, int index, int data);
+int		del_stack(t_stack *stack);
 
 #endif

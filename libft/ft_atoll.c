@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-long long	atoll(const char *nptr)
+long long	ft_atoll(const char *nptr)
 {
 	long long	sign;
 	long long	result;

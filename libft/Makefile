@@ -48,6 +48,8 @@ SRC=        ft_bzero.c \
 			ft_lstclear_bonus.c \
 			ft_lstiter_bonus.c \
 			ft_lstmap_bonus.c \
+            ft_error.c \
+            ft_atoll.c \
 
 OBJ= $(SRC:.c=.o) 
 

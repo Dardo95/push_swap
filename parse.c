@@ -41,26 +41,20 @@ size_t	count_numbers(int argc, char **argv)
 	return (result);
 }
 
-int	check_limits(int argc, char **argv)
+int	check_limits(const char *num_str)
 {
-	int			i;
 	long long	num;
 
-	i = 1;
-	while (i < argc)
-	{
-		num = ft_atoll(argv[i]);
-		if (num < INT_MIN || num > INT_MAX)
-			ft_error("Error\n", 1);
-		i++;
-	}
+	num = ft_atoll(num_str);
+	if (num < INT_MIN || num > INT_MAX)
+		ft_error("Error\n", 1);
 	return (1);
 }
 
 void	check_duplicates(int *numbers, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (i < len - 1)
@@ -92,7 +86,7 @@ void	farray(int argc, char **argv, int *array)
 	{
 		split_num = ft_split(argv[i], ' ');
 		if (!split_num)
-			ft_error("Error\n");
+			ft_error("Error\n", 1);
 		j = 0;
 		while (split_num[j])
 		{
@@ -107,12 +101,16 @@ void	farray(int argc, char **argv, int *array)
 }
 
 
-int	*init_parse(int argc, char **argv, size *count)
+int	*init_parse(int argc, char **argv, size_t *count)
 {
 	int	*array;
 
 	*count = count_numbers(argc, argv);
-	array = malloc(sizeof(int) * count);
+	if (*count == 0)
+		ft_error("Error\n", 1);
+	array = malloc(sizeof(int) * (*count));
+	if (!array)
+		ft_error("Error\n", 1);
 	farray(argc, argv, array);
 	check_duplicates(array, *count);
 	return(array);

@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 17:42:34 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/20 17:43:27 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/21 15:01:33 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void		ft_error(char *err, int b);
 long long	ft_atoll(const char *nptr);
-void		bubble_sort(int *array, int size);
+void		ft_bubble_sort(int *array, int size);
 
 #endif

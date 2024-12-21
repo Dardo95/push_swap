@@ -6,13 +6,13 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 17:25:55 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/20 17:27:53 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/21 15:01:03 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bubble_sort(int *array, int size)
+void	ft_bubble_sort(int *array, int size)
 {
 	int	temp;
 	int	swapped;

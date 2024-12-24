@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 13:53:22 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/03 14:42:34 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:32:45 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	rotate(t_stack *stack, char c, int s_n_bool)
 	while (last->next != NULL)
 		last = last->next;
 	last->next = temp;
-	temp = NULL;
+	temp->next = NULL;
 	if (s_n_bool)
 	{
 		write(1, "r", 1);

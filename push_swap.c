@@ -6,22 +6,36 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:26:49 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/21 15:09:39 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/24 13:40:21 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "push_swap.h"
 
-void init_ps(t_stack *stack_a, t_stack *stack_b, int *array, size_t size)
+
+static int	ft_index(int n, int *array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i] != n)
+	{
+		i++;
+	}
+	return (i);
+}
+
+void	init_ps(t_stack *stack_a, t_stack *stack_b, int *array, size_t size)
 {
 	size_t	i;
+	t_node	*temp;
 
 	stack_a->head = NULL;
 	stack_a->size = 0;
-	i = size - 1;
-	while(i > 0)
+	i = size;
+	while (i > 0)
 	{
 		--i;
 		push_stack(stack_a, 0, array[i]);
@@ -29,61 +43,31 @@ void init_ps(t_stack *stack_a, t_stack *stack_b, int *array, size_t size)
 	stack_b->head = NULL;
 	stack_b->size = 0;
 	ft_bubble_sort(array, size);
+	temp = stack_a->head;
+	while (temp)
+	{
+		temp->s_index = ft_index(temp->data, array);
+		temp = temp->next;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 int main(int argc, char **argv)
 {
+    t_stack stack_a;
+    t_stack stack_b;
+    int *array;
     size_t count;
-    int *parsed_numbers;
-    size_t i;
-    // Verificar que se pasen argumentos
-    if (argc < 2)
-    {
-        printf("Error: No se han pasado argumentos\n");
-        return (1);
-    }
-    // Llamar a la función de parseo
-    parsed_numbers = init_parse(argc, argv, &count);
-    if (!parsed_numbers)
-    {
-        printf("Error: Fallo al parsear los números\n");
-        return (1);
-    }
-    // Imprimir los números parseados
-    printf("Números parseados (%zu):\n", count);
-    for (i = 0; i < count; i++)
-    {
-        printf("%d\n", parsed_numbers[i]);
-    }
-    // Liberar memoria
-    free(parsed_numbers);
+
+    if (argc == 1)
+        return (0);
+    array = init_parse(argc, argv, &count);
+    if (!array)
+        ft_error("Error\n", 1);
+    init_ps(&stack_a, &stack_b, array, count);
+    sort(&stack_a, &stack_b, array, count);
+	free(array);
+    free_stack(&stack_a);
+	
+
     return (0);
 }

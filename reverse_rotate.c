@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:47:05 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/03 16:51:02 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/23 15:54:00 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	reverse_rotate(t_stack *stack, char c, int s_n_bool)
 		second_last = last;
 		last = last->next;
 	}
-	second_last->next = NULL;
+	if (second_last)
+		second_last->next = NULL;
 	last->next = stack->head;
 	stack->head = last;
 	if (s_n_bool)

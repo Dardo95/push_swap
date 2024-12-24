@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/20 13:08:17 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/24 13:25:01 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct s_node
 {
@@ -47,5 +48,15 @@ int		*init_parse(int argc, char **argv, size_t *count);
 void	init_stacks(t_stack *stack_a, t_stack *stack_b, int *array, int size);
 void	push_stack(t_stack *stack, int index, int data);
 int		del_stack(t_stack *stack);
+int		is_rot_sort(t_stack *stack, int min_s_index);
+void	simple_sort(t_stack *stack, int length);
+void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length);
+void	k_sort1(t_stack *stack_a, t_stack *stack_b, int length);
+void	k_sort2(t_stack *stack_a, t_stack *stack_b, int length);
+int		get_min_index(t_stack *stack);
+int		count_r(t_node *stack, int index);
+int		is_sorted(t_stack *stack);
+void	free_stack(t_stack *stack);
+void	sort(t_stack *stack_a, t_stack *stack_b, int *numbers, int length);
 
 #endif

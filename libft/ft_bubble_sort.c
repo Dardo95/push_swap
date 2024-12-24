@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 17:25:55 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/21 15:01:03 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/12/24 13:25:50 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 
 void	ft_bubble_sort(int *array, int size)
 {
+	int	i;
+	int	v;
 	int	temp;
-	int	swapped;
-	int	index;
 
-	while (size > 1)
+	if (!array || size <= 1)
+		return ;
+	v = 1;
+	while (v)
 	{
-		swapped = 0;
-		index = 0;
-		while (index < size - 1)
+		v = 0;
+		i = 0;
+		while (i < size - 1)
 		{
-			if (array[index] > array[index + 1])
+			if (array[i] > array[i + 1])
 			{
-				temp = array[index];
-				array[index] = array[index + 1];
-				array[index + 1] = temp;
-				swapped = 1;
+				temp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = temp;
+				v = 1;
 			}
-			index++;
+			i++;
 		}
-		if (!swapped)
-			break ;
 		size--;
 	}
 }

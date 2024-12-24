@@ -2,8 +2,8 @@
 NAME = push_swap
 
 # Compilador y flags
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
 
 # Directorios
 SRCDIR = .
@@ -12,7 +12,8 @@ INCDIR = .
 OBJDIR = obj
 
 # Archivos fuente y objetos
-SRC = parse.c push.c push_swap.c reverse_rotate.c rotate.c swap.c
+SRC = parse.c push.c push_swap.c reverse_rotate.c rotate.c swap.c stacks.c \
+		sort.c sort2.c
 OBJ = $(patsubst %.c, $(OBJDIR)/%.o, $(SRC))
 LIBFT = $(LIBFTDIR)/libft.a
 

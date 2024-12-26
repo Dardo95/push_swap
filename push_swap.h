@@ -41,7 +41,7 @@ void	rotate_both(t_stack *stack_a, t_stack *stack_b);
 void	swap(t_stack *stack, char c, int s_n_bool);
 void	swap_both(t_stack *stack_a, t_stack *stack_b);
 size_t	count_numbers(int argc, char **argv);
-int		check_limits(const char *num_str);
+void check_limits(char *num_str, char **split_num, int *array);
 void	check_duplicates(int *numbers, size_t len);
 void	farray(int argc, char **argv, int *array);
 int		*init_parse(int argc, char **argv, size_t *count);

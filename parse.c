@@ -41,15 +41,30 @@ size_t	count_numbers(int argc, char **argv)
 	return (result);
 }
 
-int	check_limits(const char *num_str)
+void check_limits(char *num_str, char **split_num, int *array)
 {
-	long long	num;
-
-	num = ft_atoll(num_str);
-	if (num < INT_MIN || num > INT_MAX)
-		ft_error("Error\n", 1);
-	return (1);
+    long long num;
+    int i;
+	
+    num = ft_atoll(num_str);
+    if (num < INT_MIN || num > INT_MAX)
+    {
+        if (split_num)
+        {
+            i = 0;
+            while (split_num[i])
+            {
+                free(split_num[i]);
+                i++;
+            }
+            free(split_num);
+        }
+        if (array)
+        	free(array);
+        ft_error("Error\n", 1);
+    }
 }
+
 
 void	check_duplicates(int *numbers, size_t len)
 {
@@ -90,7 +105,7 @@ void	farray(int argc, char **argv, int *array)
 		j = 0;
 		while (split_num[j])
 		{
-			check_limits(split_num[j]);
+			check_limits(split_num[j], split_num, array);
 			array[index++] = ft_atoi(split_num[j]);
 			free(split_num[j]);
 			j++;

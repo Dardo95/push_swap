@@ -6,14 +6,13 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:26:49 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/24 13:40:21 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:49:12 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 
 static int	ft_index(int n, int *array)
 {
@@ -51,23 +50,21 @@ void	init_ps(t_stack *stack_a, t_stack *stack_b, int *array, size_t size)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_stack stack_a;
-    t_stack stack_b;
-    int *array;
-    size_t count;
+	t_stack	stack_a;
+	t_stack	stack_b;
+	int		*array;
+	size_t	count;
 
-    if (argc == 1)
-        return (0);
-    array = init_parse(argc, argv, &count);
-    if (!array)
-        ft_error("Error\n", 1);
-    init_ps(&stack_a, &stack_b, array, count);
-    sort(&stack_a, &stack_b, array, count);
+	if (argc == 1)
+		return (0);
+	array = init_parse(argc, argv, &count);
+	if (!array)
+		ft_error("Error\n");
+	init_ps(&stack_a, &stack_b, array, count);
+	sort(&stack_a, &stack_b, array, count);
 	free(array);
-    free_stack(&stack_a);
-	
-
-    return (0);
+	free_stack(&stack_a);
+	return (0);
 }

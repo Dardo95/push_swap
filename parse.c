@@ -6,86 +6,53 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:46:38 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/18 17:25:16 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:39:13 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static size_t	validate_and_count_in_arg(const char *arg)
+{
+	size_t	count;
+	int		i;
+	int		found_digit;
+
+	count = 0;
+	i = 0;
+	found_digit = 0;
+	while (arg[i])
+	{
+		if (!ft_isdigit(arg[i]) && arg[i] != ' '
+			&& arg[i] != '+' && arg[i] != '-')
+			ft_error("Error\n");
+		if ((arg[i] == '-' && !ft_isdigit(arg[i + 1]))
+			|| (arg[i] == '+' && !ft_isdigit(arg[i + 1])))
+			ft_error("Error\n");
+		if (ft_isdigit(arg[i]) && (arg[i + 1] == ' ' || arg[i + 1] == '\0'))
+			count++;
+		if (ft_isdigit(arg[i]))
+			found_digit = 1;
+		i++;
+	}
+	if (!found_digit)
+		ft_error("Error\n");
+	return (count);
+}
+
 size_t	count_numbers(int argc, char **argv)
 {
+	size_t	total;
 	int		i;
-	int		j;
-	size_t	result;
 
+	total = 0;
 	i = 1;
-	result = 0;
 	while (i < argc)
 	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' '
-				&& argv[i][j] != '+' && argv[i][j] != '-')
-				ft_error("Error\n", 1);
-			if ((argv[i][j] == '-' && !ft_isdigit(argv[i][j + 1]))
-				|| (argv[i][j] == '+' && !ft_isdigit(argv[i][j + 1])))
-				ft_error("Error\n", 1);
-			if (ft_isdigit(argv[i][j]) && (argv[i][j + 1] == ' ' || argv[i][j
-					+ 1] == '\0'))
-				result += 1;
-			j++;
-		}
+		total += validate_and_count_in_arg(argv[i]);
 		i++;
 	}
-	return (result);
-}
-
-void check_limits(char *num_str, char **split_num, int *array)
-{
-    long long num;
-    int i;
-	
-    num = ft_atoll(num_str);
-    if (num < INT_MIN || num > INT_MAX)
-    {
-        if (split_num)
-        {
-            i = 0;
-            while (split_num[i])
-            {
-                free(split_num[i]);
-                i++;
-            }
-            free(split_num);
-        }
-        if (array)
-        	free(array);
-        ft_error("Error\n", 1);
-    }
-}
-
-
-void	check_duplicates(int *numbers, size_t len)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	while (i < len - 1)
-	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (numbers[i] == numbers[j])
-			{
-				free(numbers);
-				ft_error("Error\n", 1);
-			}
-			j++;
-		}
-		i++;
-	}
+	return (total);
 }
 
 void	farray(int argc, char **argv, int *array)
@@ -101,7 +68,7 @@ void	farray(int argc, char **argv, int *array)
 	{
 		split_num = ft_split(argv[i], ' ');
 		if (!split_num)
-			ft_error("Error\n", 1);
+			ft_error("Error\n");
 		j = 0;
 		while (split_num[j])
 		{
@@ -115,18 +82,36 @@ void	farray(int argc, char **argv, int *array)
 	}
 }
 
-
 int	*init_parse(int argc, char **argv, size_t *count)
 {
 	int	*array;
 
 	*count = count_numbers(argc, argv);
 	if (*count == 0)
-		ft_error("Error\n", 1);
+		ft_error("Error\n");
 	array = malloc(sizeof(int) * (*count));
 	if (!array)
-		ft_error("Error\n", 1);
+		ft_error("Error\n");
 	farray(argc, argv, array);
 	check_duplicates(array, *count);
-	return(array);
+	return (array);
 }
+
+/* int strlen_num(int num)
+{
+	int res = 0;
+
+	if (num == 0)
+		return (1);
+	if(num < 0)
+	{
+		res++;
+		num = -num;
+	}
+	while (num > 0)
+	{
+		res++;
+		num /= 10;
+	}
+	return (res);
+} */

@@ -6,10 +6,9 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 14:45:56 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/23 17:58:07 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:51:01 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -56,18 +55,19 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-    while (stack)
-        del_stack(stack);
+	while (stack)
+		del_stack(stack);
 }
+
 void	sort(t_stack *stack_a, t_stack *stack_b, int *numbers, int length)
 {
 	if (is_sorted(stack_a))
 	{
 		free(numbers);
 		free_stack(stack_a);
-		ft_error("", 1);
+		ft_error("Error\n");
 	}
 	else if (length == 2)
 		swap(stack_a, 'a', 1);
@@ -81,5 +81,5 @@ void	sort(t_stack *stack_a, t_stack *stack_b, int *numbers, int length)
 		k_sort2(stack_a, stack_b, length);
 	}
 	else
-		ft_error("", 1);
+		ft_error("Error\n");
 }

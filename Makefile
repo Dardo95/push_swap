@@ -13,7 +13,7 @@ OBJDIR = obj
 
 # Archivos fuente y objetos
 SRC = parse.c push.c push_swap.c reverse_rotate.c rotate.c swap.c stacks.c \
-		sort.c sort2.c
+		sort.c sort2.c parse_utils.c
 OBJ = $(patsubst %.c, $(OBJDIR)/%.o, $(SRC))
 LIBFT = $(LIBFTDIR)/libft.a
 

@@ -3,20 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enogueir <enogueir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:45:58 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/16 14:23:44 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:48:28 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_error(char *err, int b)
+void	ft_error(char *err)
 {
 	write(2, err, ft_strlen(err));
-	if (b == 1)
-	{
-		exit(EXIT_FAILURE);
-	}
+	exit(EXIT_FAILURE);
 }

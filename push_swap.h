@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/12/24 13:25:01 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:31:27 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_stack
 	int			size;
 }	t_stack;
 
-
 void	push(t_stack *stack_a, t_stack *stack_b, char c, int s_n_bool);
 void	reverse_rotate(t_stack *stack, char c, int s_n_bool);
 void	reverse_rotate_both(t_stack *stack_a, t_stack *stack_b);
@@ -41,7 +40,7 @@ void	rotate_both(t_stack *stack_a, t_stack *stack_b);
 void	swap(t_stack *stack, char c, int s_n_bool);
 void	swap_both(t_stack *stack_a, t_stack *stack_b);
 size_t	count_numbers(int argc, char **argv);
-void check_limits(char *num_str, char **split_num, int *array);
+void	check_limits(char *num_str, char **split_num, int *array);
 void	check_duplicates(int *numbers, size_t len);
 void	farray(int argc, char **argv, int *array);
 int		*init_parse(int argc, char **argv, size_t *count);
@@ -58,5 +57,6 @@ int		count_r(t_node *stack, int index);
 int		is_sorted(t_stack *stack);
 void	free_stack(t_stack *stack);
 void	sort(t_stack *stack_a, t_stack *stack_b, int *numbers, int length);
+int		strlen_num(int num);
 
 #endif

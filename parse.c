@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:46:38 by enogueir          #+#    #+#             */
-/*   Updated: 2025/02/13 11:39:13 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/15 03:19:14 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,19 @@ void	farray(int argc, char **argv, int *array)
 	index = 0;
 	while (i < argc)
 	{
-		split_num = ft_split(argv[i], ' ');
+		split_num = ft_split(argv[i++], ' ');
 		if (!split_num)
 			ft_error("Error\n");
 		j = 0;
 		while (split_num[j])
 		{
+			if (ft_strlen(split_num[j]) > 12)
+				ft_cleanup_and_error(split_num, array);
 			check_limits(split_num[j], split_num, array);
 			array[index++] = ft_atoi(split_num[j]);
-			free(split_num[j]);
-			j++;
+			free(split_num[j++]);
 		}
 		free(split_num);
-		i++;
 	}
 }
 
@@ -96,22 +96,3 @@ int	*init_parse(int argc, char **argv, size_t *count)
 	check_duplicates(array, *count);
 	return (array);
 }
-
-/* int strlen_num(int num)
-{
-	int res = 0;
-
-	if (num == 0)
-		return (1);
-	if(num < 0)
-	{
-		res++;
-		num = -num;
-	}
-	while (num > 0)
-	{
-		res++;
-		num /= 10;
-	}
-	return (res);
-} */

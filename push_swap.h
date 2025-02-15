@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 12:41:44 by enogueir          #+#    #+#             */
-/*   Updated: 2025/02/13 11:31:27 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/15 03:12:48 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		count_r(t_node *stack, int index);
 int		is_sorted(t_stack *stack);
 void	free_stack(t_stack *stack);
 void	sort(t_stack *stack_a, t_stack *stack_b, int *numbers, int length);
-int		strlen_num(int num);
+int		ft_free_split_push(char **array);
+void	ft_cleanup_and_error(char **split_num, int *array);
 
 #endif

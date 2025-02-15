@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:51:48 by enogueir          #+#    #+#             */
-/*   Updated: 2025/02/13 11:38:47 by enogueir         ###   ########.fr       */
+/*   Updated: 2025/02/15 03:19:50 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,22 @@ void	check_duplicates(int *numbers, size_t len)
 		}
 		i++;
 	}
+}
+
+int	ft_free_split_push(char **array)
+{
+	int	j;
+
+	j = 0;
+	while (array[j] != 0)
+		free(array[j++]);
+	free(array);
+	return (0);
+}
+
+void	ft_cleanup_and_error(char **split_num, int *array)
+{
+	ft_free_split_push(split_num);
+	free(array);
+	ft_error("Error");
 }
